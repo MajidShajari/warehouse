@@ -38,12 +38,6 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
@@ -65,3 +59,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Data
+*.xlsx
