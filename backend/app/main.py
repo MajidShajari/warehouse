@@ -3,9 +3,9 @@ from fastapi import FastAPI
 
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.search import router as search_router
+base_url_path='/api'
 
-
-app = FastAPI(title="WareHouse API")
+app = FastAPI(title="WareHouse API",docs_url=base_url_path+'/docs')
 origins = [
     "*"
 ]
@@ -17,4 +17,4 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.include_router(search_router,prefix="/api/search")
+app.include_router(search_router,prefix=base_url_path+"/search")

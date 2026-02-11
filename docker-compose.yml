@@ -7,8 +7,19 @@ services:
     networks:
       - npm_net
     expose:
-      - '9090'
+      - '9000'
     restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: Warehouse
+    networks:
+      - npm_net
+    expose:
+      - '80'
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: '/api'
 
 networks:
   npm_net:
