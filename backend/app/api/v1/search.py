@@ -14,7 +14,7 @@ def search_products(q: str = Query(..., min_length=1)):
     return {"count": len(result), "items": result.to_dicts()}
 
 
-@router.get("/cost")
+@router.get("/cost-center")
 def search_cost_center(q: str = Query(..., min_length=1)):
     result = cost_service.search(q)
     return {"count": len(result), "items": result.to_dicts()}
